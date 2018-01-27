@@ -20,7 +20,8 @@ Animation.prototype.drawFrame = function (tick, ctx, x, y, scaleBy) {
             this.elapsedTime = 0;
         }
     } else if (this.isDone()) {
-        return;
+        this.elapsedTime = this.totalTime -= this.frameDuration;
+        //return;
     }
     var index = this.reverse ? this.frames - this.currentFrame() - 1 : this.currentFrame();
     var vindex = 0;
